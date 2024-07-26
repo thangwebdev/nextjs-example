@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+
+.shadow-main {
+  box-shadow: 0px 0px 2px 1px #00000022
+}
+.two-lines-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em; /* Tùy chỉnh theo chiều cao dòng của bạn */
+  max-height: 3em; /* 2 dòng * 1.5em (chiều cao dòng) */
+}
+.hidden-scroll::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 10px;
+}
+.round-loading {
+  animation: round-loading 0.5s ease-in-out infinite;
+}
+@keyframes round-loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* carousel */
+.carousel-pagination-bullet {
+  display: inline-block;
+  margin-left: 4px;
+  width: 15px;
+  height: 6px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px 0px #00000022;
+  cursor: pointer;
+  transition: all linear 0.1s;
+}
+.carousel-pagination-bullet-active {
+  width: 30px;
+  background-color: currentColor;
+  cursor: default;
+}
+.swiper-wrapper .swiper-slide {
+  height: unset;
+}
+.swiper-button-next {
+  background-color: #00000055;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2px 1px #00000022;
+  transition: all linear 0.1s;
+  right: 0;
+}
+.swiper-button-next:hover {
+  background-color: #fff;
+}
+.swiper-button-next::after {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.swiper-button-prev {
+  background-color: #00000055;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2px 1px #00000022;
+  transition: all linear 0.1s;
+  left: 0px;
+}
+.swiper-button-prev:hover {
+  background-color: #fff;
+}
+.swiper-button-prev::after {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* loading */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 40px;
+  height: 40px;
+  --c:no-repeat linear-gradient(#47cc58 0 0);
+  background: var(--c),var(--c),var(--c),var(--c);
+  background-size: 21px 21px;
+  animation: l5 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes l5 {
+ 0%   {background-position: 0    0,100% 0   ,100% 100%,0 100%}
+ 33%  {background-position: 0    0,100% 0   ,100% 100%,0 100%;width:60px;height: 60px}
+ 66%  {background-position: 100% 0,100% 100%,0    100%,0 0   ;width:60px;height: 60px}
+ 100% {background-position: 100% 0,100% 100%,0    100%,0 0   }
+}
